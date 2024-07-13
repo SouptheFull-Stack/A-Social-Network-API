@@ -50,7 +50,7 @@ userSchema.virtual("friendCount").get(function () {
 });
 
 // initialise the User model
-const User = mongoose.model("User", userSchema);
+const User = model("User", userSchema);
 
 // exporting this file to use in other files
 module.exports = User;
