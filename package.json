@@ -1,0 +1,17 @@
+{
+  "name": "a-social-network-api",
+  "version": "1.0.0",
+  "description": "A basic API development for a social network platform, using the following; NoSQL (MongoDB and Mongoose ODM), Express.js, and Node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.1"
+  }
+}
