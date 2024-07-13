@@ -5,7 +5,7 @@ const reactionSchema = new Schema({
   reactionId: {
     type: Schema.Types.ObjectId,
     // come back to this if it doesn't end up working
-    default: mongoose.ObjectId,
+    default: mongoose.Types.ObjectId,
   },
   reactionBody: {
     type: String,
@@ -19,6 +19,7 @@ const reactionSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now,
+    timestamp: true,
     // Use a getter method to format the timestamp on query
   },
 });
@@ -35,6 +36,7 @@ const thoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
+      timestamp: true,
       // get:
       // potentially just do default: Date.now, OR just timestamp: true. ??
     },

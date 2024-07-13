@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
-const validateEmail = function (email) {
-  const regexMatch = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
+const validateEmail = (email) => {
+  const regexMatch = /^([a-zA-Z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
   return regexMatch.test(email);
 };
 
@@ -17,7 +17,6 @@ const userSchema = new Schema(
       type: String,
       required: true,
       unique: true,
-      // can possibly replace regex with function name?? tutor notes
       validate: [validateEmail, "Oopsie! Please provide a valid email address"],
     },
     thoughts: [

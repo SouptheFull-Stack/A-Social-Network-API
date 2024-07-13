@@ -14,17 +14,18 @@ const {
 // functions for (/api/thoughts) path
 router.route("/").get(getThoughts).post(createThought);
 
-// functions for (/api/:thoughtId) where only a specific one is targeted
+// functions for (/api/thoughts/:thoughtId) where only a specific one is targeted
 router
-  .route("/thoughts/:thoughtId")
+  .route("/:thoughtId")
   .get(getOneThought)
   .put(updateThought)
   .delete(deleteThought);
 
-router
-  .route("/thoughts/:thoughtId/reactions")
-  .post(createReaction)
-  .delete(removeReaction);
+// functions for creation of reactions
+router.route("/:thoughtId/reactions").post(createReaction);
+
+// functions for deleting reaction via id with associated thought array
+router.route("/thoughtId/reactions/reactionId").delete(removeReaction);
 
 // exporting for use elsewhere
 module.exports = router;
